@@ -1,0 +1,48 @@
+{
+  "name": "aqueduct-app",
+  "version": "0.0.52",
+  "description": "Legion load testing framework: GUI interface",
+  "main": "src/main.js",
+  "scripts": {
+    "build": "electron-rebuild && webpack",
+    "start": "electron .",
+    "test": "eslint ./src ./spec",
+    "clean": "rimraf node_modules coverage dist .cache",
+    "dist": "build -mwl --x64"
+  },
+  "author": "Christopher Lane Hinson <lane@webperformance.com>",
+  "license": "APSL-2.0",
+  "dependencies": {
+    "legion-aqueduct": "https://github.com/lane-webperformance/legion-aqueduct",
+    "legion-capture": "https://github.com/lane-webperformance/legion-capture#v0.0.52",
+    "legion-control": "https://github.com/lane-webperformance/legion-control#v0.0.52",
+    "legion-metrics": "https://github.com/lane-webperformance/legion-metrics#v0.0.52",
+    "promise-delay": "^2.1.0",
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0",
+    "uuid": "^3.2.1"
+  },
+  "devDependencies": {
+    "css-loader": "^0.28.10",
+    "electron": "^1.7.10",
+    "electron-builder": "^19.53.6",
+    "electron-rebuild": "^1.7.3",
+    "eslint": "^2.11.1",
+    "eslint-plugin-promise": "^3.5.0",
+    "html-webpack-plugin": "^2.30.1",
+    "rimraf": "^2.6.2",
+    "style-loader": "^0.20.2",
+    "webpack": "^3.11.0"
+  },
+  "build": {
+    "mac": {
+      "target": "tar.gz"
+    },
+    "linux": {
+      "target": "tar.gz"
+    },
+    "win": {
+      "target": "zip"
+    }
+  }
+}
